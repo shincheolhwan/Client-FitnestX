@@ -1,5 +1,5 @@
 import React from 'react';
-import './OnBoarding_1.css';
+import './OnBoarding_1.scss';
 
 function OnBoarding_1() {
     return (
@@ -15,7 +15,9 @@ function OnBoarding_1() {
                 </div>
             </div>
             <div className={"button-wrapper"}>
-                <button>Get Started</button>
+                <button>
+                    Get Started
+                </button>
             </div>
         </div>
     );
