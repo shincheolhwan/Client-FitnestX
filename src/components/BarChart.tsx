@@ -1,7 +1,7 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
-import '../styles/colors.css';
+import '../styles/colors.scss';
 
 const BarChart = () => {
     const data = {
