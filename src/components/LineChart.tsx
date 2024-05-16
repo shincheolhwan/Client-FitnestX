@@ -1,7 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
-import './colors.css';
+import '../styles/colors.css';
 
 const LineChart = () => {
     const data = {
