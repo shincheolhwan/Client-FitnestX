@@ -1,38 +1,42 @@
 @import '../styles/colors';
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .btn.primary {
-    background: linear-gradient(90deg, var(--brand-color-primary), var(--brand-color-secondary));
-    color: white;
+  background: linear-gradient(90deg, var(--brand-color-primary), var(--brand-color-secondary));
+  color: white;
+  width: 315px;
+  height: 60px;
 }
 
 .btn.primary .icon {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 .btn.secondary {
-    background: linear-gradient(90deg, var(--secondary-color-primary), var(--secondary-color-secondary));
-    color: white;
+  background: linear-gradient(90deg, var(--secondary-color-primary), var(--secondary-color-secondary));
+  color: white;
+  width: 95px;
+  height: 60px;
 }
 
 .btn.icon-only {
-    background-color: var(--brand-color-primary);
-    color: white;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    justify-content: center;
-    border-radius: 50%;
+  background-color: var(--brand-color-primary);
+  color: white;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  justify-content: center;
+  border-radius: 50%;
 }
