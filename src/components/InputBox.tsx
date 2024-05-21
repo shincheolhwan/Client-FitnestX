@@ -6,10 +6,11 @@ interface InputProps {
     placeholder?: string;
     icon?: React.ReactNode;
     value?: string;
+    onChange?: ()=>void;
 }
 
 // Input 컴포넌트 정의
-const InputBox: React.FC<InputProps> = ({placeholder,icon,value}) => {
+const InputBox: React.FC<InputProps> = ({placeholder,icon,value,onChange}) => {
     return (
         <div className="input-box">
             {icon && <span className="icon">{icon}</span>}
@@ -17,6 +18,7 @@ const InputBox: React.FC<InputProps> = ({placeholder,icon,value}) => {
                 type="text"
                 placeholder={placeholder}
                 value={value}
+                onChange={onChange}
             />
         </div>
     );
