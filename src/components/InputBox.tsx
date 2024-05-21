@@ -5,18 +5,11 @@ import './InputBox.scss';
 interface InputProps {
     placeholder?: string;
     icon?: React.ReactNode;
+    value?: string;
 }
 
 // Input 컴포넌트 정의
-const Input: React.FC<InputProps> = ({placeholder,icon}) => {
-    // input 상자의 값을 state로 관리
-    const [value, setValue] = useState<string>('');
-
-    // input 값이 변경될 때마다 실행되는 핸들러
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(event.target.value);
-    };
-
+const InputBox: React.FC<InputProps> = ({placeholder,icon,value}) => {
     return (
         <div className="input-box">
             {icon && <span className="icon">{icon}</span>}
@@ -24,10 +17,9 @@ const Input: React.FC<InputProps> = ({placeholder,icon}) => {
                 type="text"
                 placeholder={placeholder}
                 value={value}
-                onChange={handleChange}
             />
         </div>
     );
 };
 
-export default Input;
+export default InputBox;
