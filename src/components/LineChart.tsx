@@ -58,7 +58,7 @@ const LineChart: React.FC<InputProps> = ({day = 0, pastData=[10,20,30,40,50,60,7
         responsive: true,
         plugins: {
             legend: {
-                display: false,
+                display: true,
             },
             tooltip: {
                 enabled: true, // 툴팁 활성화
