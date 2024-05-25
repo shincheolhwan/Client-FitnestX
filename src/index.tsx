@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import axios from "axios";
+import {CookiesProvider} from "react-cookie";
 
+axios.defaults.baseURL = process.env.REACT_APP_SERVER_HOST;
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+        <CookiesProvider>
+            <App/>
+        </CookiesProvider>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

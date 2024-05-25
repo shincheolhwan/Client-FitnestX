@@ -1,8 +1,15 @@
 import React from 'react';
 import './OnBoarding_1.scss';
+import {useNavigate} from "react-router-dom";
 import Button from "../../components/Button";
 
 const OnBoarding_1: React.FC = () => {
+    const navigate = useNavigate();
+
+    const getStarted = (): void => {
+        navigate('/register');
+    };
+
     return (
         <div className={"OnBoarding_1"}>
             <div className={"content-wrapper"}>
@@ -16,8 +23,8 @@ const OnBoarding_1: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className={"button-wrapper"}>
-                <Button label={"Get Started"}/>
+            <div className={"footer-wrapper"}>
+                <Button label={"Get Started"} onClick={getStarted}/>
             </div>
         </div>
     );
