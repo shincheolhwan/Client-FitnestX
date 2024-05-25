@@ -7,7 +7,7 @@ const OnBoarding_1: React.FC = () => {
     const navigate = useNavigate();
 
     const getStarted = (): void => {
-        navigate('/register');
+        navigate('/login');
     };
 
     return (

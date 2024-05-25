@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import './Register.scss';
 import Register_1 from "./Register_1";
 import Register_2 from "./Register_2";
+import Register_3 from "./Register_3";
 import axios from "axios";
 import {useCookies} from "react-cookie";
-import Register_3 from "./Register_3";
 
 const Register: React.FC = () => {
     const [step, setStep] = useState<number>(1);
@@ -133,7 +133,7 @@ const Register: React.FC = () => {
     return (
         <div className={"Register"}>
             {
-                step == 1 ? <Register_1
+                step === 1 ? <Register_1
                     startRegister={startRegister}
                     ID={ID}
                     setID={setID}
@@ -142,7 +142,7 @@ const Register: React.FC = () => {
                 /> : <></>
             }
             {
-                step == 2 ? <Register_2
+                step === 2 ? <Register_2
                     gender={gender}
                     setGender={setGender}
                     year={year}
@@ -159,7 +159,7 @@ const Register: React.FC = () => {
                 /> : <></>
             }
             {
-                step == 3 ? <Register_3
+                step === 3 ? <Register_3
                     ID={ID}
                 /> : <></>
             }

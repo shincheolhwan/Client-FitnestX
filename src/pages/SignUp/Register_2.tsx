@@ -82,7 +82,7 @@ const Register_2: React.FC<pageProps> = ({
                 <div className={"input-wrapper gender"}>
                     <span className={"icon"}><TbGenderBigender/></span>
                     <span className={`selection ${gender === "남자" ? "selected" : ""}`}
-                          onClick={() => selectGender("남자")}>male</span>
+                          onClick={() => selectGender("남자")}>Male</span>
                     <span className={`selection ${gender === "여자" ? "selected" : ""}`}
                           onClick={() => selectGender("여자")}>Female</span>
                 </div>
