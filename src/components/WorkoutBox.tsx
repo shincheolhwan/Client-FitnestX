@@ -4,14 +4,14 @@ import SquatsImage from "../images/squatSmall.png";
 import IconNext from "../images/iconNext.png";
 import IconCheck from "../images/iconCheck.png";
 
-interface WorkoutProps {
+interface WorkoutBoxProps {
     name?: string;
     targetCount?: number;
     onClick?: () => void;
     done?: boolean;
 }
 
-const WorkoutBox: React.FC<WorkoutProps> = ({
+const WorkoutBox: React.FC<WorkoutBoxProps> = ({
                                              name,
                                              targetCount,
                                              onClick = function () {

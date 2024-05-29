@@ -5,6 +5,7 @@ import Register from "./pages/SignUp/Register";
 import Login from "./pages/Login/Login";
 import Workout from "./pages/Workout/Workout";
 import WorkoutDetail from "./pages/Workout/Detail/WorkoutDetail";
+import WorkoutHistory from "./pages/Workout/History/WorkoutHistory";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/login" Component={Login}/>
                 <Route path="/workout" Component={Workout}/>
                 <Route path="/workout/:name/detail" Component={WorkoutDetail}/>
+                <Route path="/workout/history" Component={WorkoutHistory}/>
             </Routes>
         </Router>
     );

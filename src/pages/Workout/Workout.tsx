@@ -58,6 +58,10 @@ const Workout = () => {
             })
     }, [])
 
+    const goToWorkoutHistory = () => {
+        navigate("/workout/history");
+    }
+
     return (
         <div className={"Workout"}>
             <div className={"top-sheet-wrapper"}>
@@ -99,13 +103,16 @@ const Workout = () => {
                                         }
 
                                         return (
-                                            <WorkoutBox
-                                                key={`exercise-${el.userExerciseId}`}
-                                                name={el.name}
-                                                targetCount={el.targetCount}
-                                                onClick={routeToExercise}
-                                                done={todayExerciseHistory.has(el.name)}
-                                            />
+                                            <div className={"workout-box-wrapper"}
+                                                 key={`exercise-${el.userExerciseId}`}>
+                                                <WorkoutBox
+                                                    name={el.name}
+                                                    targetCount={el.targetCount}
+                                                    onClick={routeToExercise}
+                                                    done={todayExerciseHistory.has(el.name)}
+                                                />
+                                            </div>
+
                                         )
                                     })
                                 }
@@ -115,7 +122,7 @@ const Workout = () => {
                 </div>
             </div>
             <div className={"footer-wrapper"}>
-                <Button label={"Check Your History"}/>
+                <Button label={"Check Your History"} onClick={goToWorkoutHistory}/>
             </div>
         </div>
     )
