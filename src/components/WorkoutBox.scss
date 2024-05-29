@@ -1,0 +1,46 @@
+.WorkoutBox {
+    width: 100%;
+    display: flex;
+
+    .workout-box-image-wrapper {
+        margin: 0 10px 0 0;
+
+        .workout-image {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    .workout-box-text-wrapper {
+        flex: 1;
+
+        .workout-name-text {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            color: #1D1617;
+            margin: 0 0 5px 0;
+        }
+
+        .workout-target-text {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            color: #7B6F72;
+        }
+    }
+
+    .workout-box-icon-image-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon-image {
+            width: 24px;
+            height: 24px;
+        }
+
+    }
+}

@@ -12,7 +12,7 @@ const Register_3: React.FC<pageProps> = ({ID}) => {
     const navigate = useNavigate();
 
     const goToHome = () => {
-        navigate("/workout/tracker");
+        navigate("/workout");
     }
 
     return (

@@ -10,7 +10,7 @@ const WorkoutDetail = () => {
             <WorkoutDetailBaseLayer/>
             <WorkoutDetailBottomSheet/>
             <div className={"footer-wrapper"}>
-                <Button label={"Start Workout"}/>
+                <Button label={"Start WorkoutBox"}/>
             </div>
         </div>
     )

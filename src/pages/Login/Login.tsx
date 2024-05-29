@@ -34,8 +34,8 @@ const Login: React.FC = () => {
                 }
 
                 setCookie('id', ID);
-                navigate("/workout/tracker");
-            }).catch(e => {
+                navigate("/workout");
+            }).catch(() => {
             alert("fail to login.");
         })
     }

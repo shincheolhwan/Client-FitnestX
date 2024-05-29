@@ -26,10 +26,10 @@ interface InputProps {
     pastData?: number[],
 }
 
-const LineChart: React.FC<InputProps> = ({day = 0, pastData=[10,20,30,40,50,60,70]}) => {
+const LineChart: React.FC<InputProps> = ({day = 0, pastData = [10, 20, 30, 40, 50, 60, 70]}) => {
     let labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
-    function rearrangeArray(arr: string[], startIndex: number) {
+    function rearrangeArray(arr: any[], startIndex: number) {
         // 시작 인덱스부터 끝까지의 요소 추출
         const frontPart = arr.slice(startIndex);
         // 배열의 처음부터 시작 인덱스 이전의 요소 추출
@@ -44,7 +44,7 @@ const LineChart: React.FC<InputProps> = ({day = 0, pastData=[10,20,30,40,50,60,7
         datasets: [
             {
                 label: 'Completion Rate',
-                data: pastData,
+                data: rearrangeArray(pastData, day),
                 borderColor: 'rgba(255, 255, 255, 1)',
                 backgroundColor: 'rgba(255, 255, 255, 0.5)',
                 borderWidth: 2,
@@ -58,7 +58,7 @@ const LineChart: React.FC<InputProps> = ({day = 0, pastData=[10,20,30,40,50,60,7
         responsive: true,
         plugins: {
             legend: {
-                display: true,
+                display: false,
             },
             tooltip: {
                 enabled: true, // 툴팁 활성화

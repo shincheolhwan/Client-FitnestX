@@ -2,6 +2,7 @@ import React from "react";
 import "./WorkoutDetailBottomSheet.scss"
 import useBottomSheet from "../../../hook/useBottomSheet";
 import YouTube from "react-youtube";
+import {useParams} from "react-router-dom";
 
 const WorkoutDetailBottomSheet = () => {
     const {sheet, content} = useBottomSheet(100, window.innerHeight / 2);
@@ -26,12 +27,14 @@ const BottomSheetHeader: React.FC = () => {
 };
 
 const BottomSheetContent: React.FC = () => {
+    const params = useParams();
+
     return (
         <div className={"BottomSheetContent"}>
             <div className={"header-wrapper"}>
                 <div className={"header-text-wrapper"}>
                     <div className={"header-1"}>
-                        스쿼트
+                        {params.name}
                     </div>
                 </div>
             </div>

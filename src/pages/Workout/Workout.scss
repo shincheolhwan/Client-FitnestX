@@ -1,0 +1,116 @@
+@import '../../styles/colors';
+
+.Workout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(60deg, var(--brand-color-secondary), var(--brand-color-primary));
+
+    .top-sheet-wrapper {
+        padding: 0 0 10px 0;
+
+        .header-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 40px 0;
+
+
+            .header-button-wrapper {
+                position: absolute;
+                left: 30px;
+
+                .back-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 8px;
+                    background: #F7F8F8;
+                }
+            }
+
+            .header-text {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 24px;
+                color: #FFFFFF;
+            }
+        }
+
+        .chart-wrapper {
+            padding: 0 30px;
+        }
+    }
+
+    .bottom-sheet-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: #FFFFFF;
+        border-radius: 40px 40px 0 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        overflow: hidden;
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 50px 0 0 0;
+            overflow: hidden;
+
+            .content-header-wrapper {
+                margin: 0 30px 20px 30px;
+                padding: 18px 20px;
+                background: $brand-color-secondary;
+                border-radius: 16px;
+
+                .content-header-text {
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 21px;
+                    color: #1D1617;
+                }
+            }
+
+            .content-main-wrapper {
+                flex: 1;
+                overflow: hidden;
+                padding: 0 36px;
+
+                .workout-list-wrapper {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .workout-list-header {
+                        margin: 2px 0 30px 2px;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: #1D1617;
+                    }
+
+                    .workout-list-content {
+                        flex: 1;
+                        overflow: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 0;
+        width: 100%;
+        background: #FFFFFF;
+    }
+}
