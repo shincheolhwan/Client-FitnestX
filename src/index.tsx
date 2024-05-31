@@ -7,6 +7,8 @@ import axios from "axios";
 import {CookiesProvider} from "react-cookie";
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_HOST;
+axios.defaults.withCredentials = true;
+
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
