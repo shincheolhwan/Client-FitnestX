@@ -1,0 +1,15 @@
+.PercentBar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 10px 0;
+
+    .percent-filled {
+        height: 10px;
+        line-height: 30px;
+        background-color: #76c7c0;
+        border-radius: 25px 0 0 25px;
+        transition: width 0.3s ease-in-out;
+    }
+}

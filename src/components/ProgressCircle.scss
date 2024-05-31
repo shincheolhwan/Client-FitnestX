@@ -1,6 +1,6 @@
 @import "../styles/colors";
 
-.progress-circle {
+.progressCircle {
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -30,9 +30,26 @@
     }
 
     .circle-text {
-        font-size: 1.2em;
-        fill: #333;
-        text-anchor: middle;
-        dominant-baseline: middle;
+
+        &.progress {
+            font-size: 0.8em;
+            fill: #333;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+
+        &.target {
+            font-size: 0.5em;
+            fill: #666;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+
+        &.normal {
+            font-size: 1.2em;
+            fill: #333;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
     }
 }

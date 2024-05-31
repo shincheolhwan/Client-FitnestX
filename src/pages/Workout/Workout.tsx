@@ -42,10 +42,19 @@ const Workout = () => {
         axios.get(`/users/exercise-record/${cookie.id}/week`)
             .then(res => {
                 // percents
+                let totalCount = [0, 0, 0, 0, 0, 0, 0];
+                let targetCount = [0, 0, 0, 0, 0, 0, 0];
                 let percents = [0, 0, 0, 0, 0, 0, 0];
                 for (let record of res.data) {
                     const day = moment(record.work_date).day();
-                    percents[day] = record.do_count / record.target_count * 100;
+                    totalCount[day] += record.do_count;
+                    targetCount[day] += record.target_count;
+                }
+
+                for (let i = 0; i < 7; i++) {
+                    if (targetCount[i] !== 0) {
+                        percents[i] = totalCount[i] / targetCount[i] * 100;
+                    }
                 }
                 setExercisePercents(percents);
 

@@ -70,7 +70,7 @@ const WorkoutHistory: React.FC = () => {
                         const histories = exerciseHistories[`${date}`];
 
                         return (
-                            <div className={"date-wrapper"} id={`date-${date}`}>
+                            <div className={"date-wrapper"} key={`date-${date}`}>
                                 <div className={"date-text-wrapper"}>
                                     <div className={"date-text"}>
                                         {date}
@@ -81,7 +81,7 @@ const WorkoutHistory: React.FC = () => {
                                         histories.map((history: { id: number; name: string; targetCount: number; doCount: number; }) => {
                                             return (
                                                 <div className={"workout-history-box-wrapper"}
-                                                     id={`workout-history-${history.id}`}>
+                                                     key={`workout-history-${history.id}`}>
                                                     <WorkoutHistoryBox
                                                         name={history.name}
                                                         targetCount={history.targetCount}

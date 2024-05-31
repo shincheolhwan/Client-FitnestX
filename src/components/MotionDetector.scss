@@ -1,0 +1,19 @@
+
+.MotionDetector {
+    .motion-detector-canvas-wrapper {
+        .motion-detector-canvas {
+            border-radius: 30px;
+            overflow: hidden;
+            //border: green 10px solid;
+        }
+    }
+    .motion-detector-text-wrapper {
+        .class-text {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            color: #7B6F72;
+        }
+    }
+}
