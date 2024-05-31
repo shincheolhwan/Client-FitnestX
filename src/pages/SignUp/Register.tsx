@@ -16,7 +16,7 @@ const Register: React.FC = () => {
     const [day, setDay] = useState<string>("");
     const [weight, setWeight] = useState<string>("");
     const [height, setHeight] = useState<string>("");
-    const [, setCookie] = useCookies(['id']);
+    const [, setCookie, removeCookie] = useCookies(['id']);
 
     const startRegister = (): void => {
         if (!validateID(ID)) {
@@ -121,6 +121,7 @@ const Register: React.FC = () => {
         })
             .then(res => {
                 if (res.data === "success") {
+                    removeCookie('id');
                     setCookie('id', ID);
                     setStep(3);
                 } else {

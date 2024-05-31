@@ -12,7 +12,7 @@ const Login: React.FC = () => {
     const navigate = useNavigate();
     const [ID, setID] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const [, setCookie] = useCookies(['id']);
+    const [, setCookie, removeCookie] = useCookies(['id']);
 
     const inputID = (e: ChangeEvent<HTMLInputElement>): void => {
         setID(e.target.value);
@@ -33,6 +33,7 @@ const Login: React.FC = () => {
                     return;
                 }
 
+                removeCookie('id');
                 setCookie('id', ID);
                 navigate("/workout");
             }).catch(() => {
