@@ -87,14 +87,15 @@ const LineChart: React.FC<InputProps> = ({day = 0, pastData = [10, 20, 30, 40, 5
                 },
             },
             y: {
+                beginAtZero: true,
+                suggestedMin: 0,
+                suggestedMax: 100,
                 grid: {
                     color: 'rgba(255, 255, 255, 0.2)',
                 },
                 ticks: {
                     color: 'white',
-                    beginAtZero: true,
-                    max: 100,
-                    stepSize: 20,
+                    stepSize: 20
                 },
             },
         },
