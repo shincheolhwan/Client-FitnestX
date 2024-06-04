@@ -9,6 +9,7 @@ import {useCookies} from "react-cookie";
 import Button from "../../../components/Button";
 import moment from "moment";
 import PercentBar from "../../../components/PercentBar";
+import {socket} from "../../../socket/socket";
 
 interface Exercise {
     id: number;
@@ -24,6 +25,7 @@ const WorkoutDoing = () => {
     const [cookie] = useCookies(['id']);
     const [exercise, setExercise] = useState<Exercise | null>(null);
     const [count, setCount] = useState(0);
+    const [EMGValue, setEMGValue] = useState(0);
 
 
     useEffect(() => {
@@ -38,6 +40,32 @@ const WorkoutDoing = () => {
                     targetCount: exercise.target_count,
                 });
             })
+    }, [])
+
+    useEffect(() => {
+
+        function onConnect() {
+            console.log("connected");
+        }
+
+        function onDisconnect() {
+            console.log("disconnected");
+        }
+
+        function onEMGEvent(value: { data: number }) {
+            console.log(value);
+            setEMGValue(value.data / 1024 * 100);
+        }
+
+        socket.on("connect", onConnect);
+        socket.on('disconnect', onDisconnect);
+        socket.on("data", onEMGEvent);
+
+        return () => {
+            socket.off('connect', onConnect);
+            socket.off('disconnect', onDisconnect);
+            socket.off('data', onEMGEvent);
+        };
     }, [])
 
 
@@ -83,7 +111,7 @@ const WorkoutDoing = () => {
                         EMG value
                     </div>
                     <div className={"EMG-bar-wrapper"}>
-                        <PercentBar  value={10}/>
+                        <PercentBar value={EMGValue}/>
                     </div>
                 </div>
                 <div className={"progress-wrapper"}>

@@ -1,7 +1,6 @@
 import React, {Dispatch, SetStateAction, useEffect, useRef, useState} from "react";
 import "./MotionDetector.scss";
 import * as tmPose from '@teachablemachine/pose';
-import {socket} from "../socket/socket";
 
 interface MotionDetectorProps {
     size: number;
@@ -43,31 +42,6 @@ const MotionDetector: React.FC<MotionDetectorProps> = ({size = 100, count, setCo
             init();
         }
     }, []);
-
-    useEffect(() => {
-
-        function onConnect() {
-            console.log("connected");
-        }
-
-        function onDisconnect() {
-            console.log("disconnected");
-        }
-
-        function onEMGEvent(value: any) {
-            console.log(value);
-        }
-
-        socket.on("connect", onConnect);
-        socket.on('disconnect', onDisconnect);
-        socket.on("data", onEMGEvent);
-
-        return () => {
-            socket.off('connect', onConnect);
-            socket.off('disconnect', onDisconnect);
-            socket.off('data', onEMGEvent);
-        };
-    }, [])
 
 
     useEffect(() => {

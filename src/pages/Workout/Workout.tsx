@@ -129,10 +129,11 @@ const Workout = () => {
                         </div>
                     </div>
                 </div>
+                <div className={"footer-wrapper"}>
+                    <Button label={"Check Your History"} onClick={goToWorkoutHistory}/>
+                </div>
             </div>
-            <div className={"footer-wrapper"}>
-                <Button label={"Check Your History"} onClick={goToWorkoutHistory}/>
-            </div>
+
         </div>
     )
 }
