@@ -1,46 +1,31 @@
-# Getting Started with Create React App
+# Client-FitnestX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 개요
 
-## Available Scripts
+FitnestX는 동작 인식 및 근전도(EMG) 센서를 활용한 스쿼트 보조 서비스입니다.<br/>
+사용자를 고려해 스쿼트 횟수를 추천하고, AI 기반 동작 인식 기술을 통해 올바른 자세와 근전도 데이터를 통해 적절한 근육 활성화를 확인하여 운동 효율성을 극대화합니다.
 
-In the project directory, you can run:
+## 주요 기능
 
-### `npm start`
+1. **스쿼트 자세 정확도 분석**: AI 동작 인식 기술로 올바른 자세를 실시간으로 확인.
+2. **근육 활성화 측정**: EMG 센서를 통해 운동 부위가 적절히 사용되고 있는지 평가.
+3. **운동 기록 관리**: 사용자의 운동 기록과 분석 결과를 시각화하여 제공.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 시스템 구성
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. 클라이언트 (React 기반 웹 애플리케이션)
+2. 서버 (Node.js 및 MySQL)
+3. 하드웨어(Arduino Uno)
 
-### `npm test`
+## 구현 기술
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**동작 인식**: Google Teachable Machine을 이용해 특정 운동 모델을 학습하고 사용자 동작 분석.<br/>
+**근전도 데이터 처리**: 근전도 센서를 통해 실시간 데이터를 수집하고 정확도를 분석.<br/>
+**서버 관리**: Node.js 기반 서버 및 MySQL 데이터베이스를 사용해 운동 정보와 사용자 데이터를 처리.<br/>
 
-### `npm run build`
+## 구현
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![로그인](./readme/login.png) |![회원가입](./readme/signUp.png)|![목록](./readme/workOut.png)|![스쿼트](./readme/workoutDoing.png)|![기록](./readme/workoutHistory.png)
+--- | --- | --- | --- | --- |
+로그인|회원가입|목록|스쿼트|기록|
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
